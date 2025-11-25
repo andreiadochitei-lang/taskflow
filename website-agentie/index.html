@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskFlow - Asistență Digitală</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'taskflow-gold': '#d9ba00',
+                        'taskflow-dark': '#a89400', 
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .smooth-scroll { scroll-behavior: smooth; }
+        /* Stil pentru a preveni extinderea imaginii banner pe verticală pe mobil */
+        .h-nav-mobile { height: 4rem; /* 64px */ }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 smooth-scroll">
+
+    <nav class="bg-white shadow-md fixed w-full z-10 top-0 h-nav-mobile">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-between h-full items-center">
+                <div class="flex-shrink-0 flex items-center w-40 md:w-64 h-full py-2">
+                    <img 
+                        src="../images/banner.png" 
+                        alt="TaskFlow Banner" 
+                        class="h-full w-full object-contain" 
+                        style="max-width: 256px; max-height: 1024px;"
+                    >
+                </div>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-600 hover:text-taskflow-dark transition">Acasă</a>
+                    <a href="#about" class="text-gray-600 hover:text-taskflow-dark transition">Despre Noi</a>
+                    <a href="#services" class="text-gray-600 hover:text-taskflow-dark transition">Servicii</a>
+                    <a href="#contact" class="px-4 py-2 bg-taskflow-gold text-gray-800 rounded-md hover:bg-taskflow-dark transition">Contactează-ne</a>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-taskflow-dark">
+                        <i class="fa-solid fa-bars h-6 w-6" id="icon-menu"></i>
+                        <i class="fa-solid fa-xmark h-6 w-6 hidden" id="icon-close"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="md:hidden hidden bg-white shadow-lg pb-2 absolute w-full" id="mobile-menu">
+            <a href="#home" class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Acasă</a>
+            <a href="#about" class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Despre Noi</a>
+            <a href="#services" class="block px-4 py-2 text-base font-medium text-gray-700 hover:bg-gray-50" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Servicii</a>
+            <a href="#contact" class="block px-4 py-2 text-base font-medium text-white bg-taskflow-gold hover:bg-taskflow-dark transition mt-2 mx-2 rounded-md" onclick="document.getElementById('mobile-menu').classList.add('hidden')">Contactează-ne</a>
+        </div>
+    </nav>
+
+    <section id="home" class="pt-24 md:pt-32 pb-20 bg-taskflow-gold">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl md:text-6xl font-extrabold text-gray-900 mb-6">
+                Concentrează-te pe afacerea ta.<br>
+                <span class="text-taskflow-dark">Noi ne ocupăm de restul.</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
+                Servicii de asistență virtuală TaskFlow pentru antreprenori, freelanceri și afaceri mici.
+                Câștigă timp și resurse lăsând organizarea în seama noastră.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#services" class="px-8 py-3 bg-gray-900 text-white font-semibold rounded-lg shadow-lg hover:bg-gray-700 transition transform hover:-translate-y-1">
+                    Vezi Serviciile
+                </a>
+                <a href="#contact" class="px-8 py-3 bg-white text-taskflow-dark font-semibold rounded-lg shadow hover:bg-gray-100 transition">
+                    Discută cu noi
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900">Cine suntem?</h2>
+                <div class="w-16 h-1 bg-taskflow-gold mx-auto mt-4 rounded"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img 
+                        src="../images/image-512.png" 
+                        srcset="../images/image-128.png 128w, ../images/image-256.png 256w, ../images/image-512.png 512w" 
+                        sizes="(max-width: 600px) 256px, 512px"
+                        alt="Echipa TaskFlow" 
+                        class="rounded-xl shadow-2xl w-full"
+                    >
+                </div>
+                <div>
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Partenerul tău de încredere</h3>
+                    <p class="text-gray-600 text-lg mb-6">
+                        Oferim servicii de asistență virtuală pentru cei care nu au timp sau resurse pentru angajați full-time.
+                    </p>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>Asistenți care lucrează 100% de la distanță.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>Gestionare completă: organizare, comunicare și suport administrativ.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-check-circle text-green-500 mt-1 mr-3"></i>
+                            <span>Flexibilitate maximă pentru bugetul tău.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-gray-900">Serviciile Oferite</h2>
+                <p class="mt-4 text-gray-600">Soluții complete TaskFlow pentru eficiență maximă</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-t-4 border-taskflow-dark">
+                    <div class="text-taskflow-dark text-4xl mb-4">
+                        <i class="fa-regular fa-envelope"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Gestionarea Emailurilor</h3>
+                    <p class="text-gray-600">Filtrarea inbox-ului, prioritizarea mesajelor și răspunsul prompt la emailurile importante.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-t-4 border-taskflow-dark">
+                    <div class="text-taskflow-dark text-4xl mb-4">
+                        <i class="fa-regular fa-calendar-check"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Calendar & Întâlniri</h3>
+                    <p class="text-gray-600">Programarea întâlnirilor, setarea remindere-lor și coordonarea eficientă cu partenerii.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-t-4 border-taskflow-dark">
+                    <div class="text-taskflow-dark text-4xl mb-4">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Asistență Clienți</h3>
+                    <p class="text-gray-600">Suport rapid și prietenos pe chat, email sau telefon pentru clienții tăi.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-t-4 border-taskflow-dark">
+                    <div class="text-taskflow-dark text-4xl mb-4">
+                        <i class="fa-solid fa-table"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Procesare de Date</h3>
+                    <p class="text-gray-600">Introducere date, creare de tabele, rapoarte detaliate și gestionarea fișierelor.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-t-4 border-taskflow-dark">
+                    <div class="text-taskflow-dark text-4xl mb-4">
+                        <i class="fa-solid fa-share-nodes"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Social Media</h3>
+                    <p class="text-gray-600">Programare postări, interacțiune cu urmăritorii și raportări de performanță.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md hover:shadow-xl transition duration-300 border-t-4 border-taskflow-dark">
+                    <div class="text-taskflow-dark text-4xl mb-4">
+                        <i class="fa-regular fa-folder-open"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Organizare Digitală</h3>
+                    <p class="text-gray-600">Structurarea documentelor în Cloud și crearea unor arhive digitale ușor de accesat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-20 bg-gray-900 text-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-6">Gata să îți recâștigi timpul?</h2>
+            <p class="text-xl text-gray-300 mb-8">Contactează-ne pentru o ofertă personalizată nevoilor tale.</p>
+            
+            <form class="max-w-md mx-auto bg-white rounded-lg p-6 shadow-lg text-left" onsubmit="event.preventDefault(); alert('Mesaj TaskFlow trimis! (Acesta este un demo)');">
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="email">Email</label>
+                    <input class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-taskflow-dark" id="email" type="email" placeholder="nume@exemplu.com">
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="message">Mesaj</label>
+                    <textarea class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none focus:border-taskflow-dark" id="message" rows="4" placeholder="Salut, am nevoie de ajutor cu..."></textarea>
+                </div>
+                <button class="w-full bg-taskflow-gold text-gray-900 font-bold py-2 px-4 rounded-lg hover:bg-taskflow-dark hover:text-white transition">
+                    Trimite Solicitarea
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-400 py-8">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2025 TaskFlow. Toate drepturile rezervate.</p>
+        </div>
+    </footer>
+    
+    <script>
+        const button = document.getElementById('mobile-menu-button');
+        const menu = document.getElementById('mobile-menu');
+        const iconMenu = document.getElementById('icon-menu');
+        const iconClose = document.getElementById('icon-close');
+
+        button.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            iconMenu.classList.toggle('hidden');
+            iconClose.classList.toggle('hidden');
+        });
+    </script>
+
+</body>
+</html>
